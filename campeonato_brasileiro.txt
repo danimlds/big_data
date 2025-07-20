@@ -1,0 +1,8 @@
+from google.colab import files
+iploaded = files.upload()
+import seaborn as sns
+import matplotlib.pyplot as plt
+import pandas as pd
+
+df = pd.read_excel('tabela_campeonato_brasileiro_2024 (2).xlsx')
+print(df)

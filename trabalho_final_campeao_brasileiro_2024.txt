@@ -1,0 +1,22 @@
+from google.colab import files
+uploaded = files.upload()
+
+import matplotlib.pyplot as plt
+import pandas as pd
+
+
+file_name = list(uploaded.keys())[0]
+df = pd.read_excel(file_name)
+print(df)
+
+campeao = df.loc[df['Pts'].idxmax()]
+
+# Extract the champion's name
+campeao = campeao['Clube']
+
+print(f"O campeão é: {campeao}")
+
+plt.bar(df['Clube'], df['Pts'])
+plt.xticks(rotation=90)
+plt.tight_layout()
+plt.show()
